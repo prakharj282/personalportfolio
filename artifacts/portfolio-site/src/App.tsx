@@ -40,7 +40,9 @@ function Home() {
         </a>
         <nav className="hidden items-center gap-9 text-xs font-semibold uppercase tracking-[0.16em] md:flex" aria-label="Primary navigation">
           <a href="#about" className="transition-colors hover:text-muted-foreground" data-testid="link-nav-about">About</a>
+          <a href="#resume" className="transition-colors hover:text-muted-foreground" data-testid="link-nav-resume">Resume</a>
           <a href="#work" className="transition-colors hover:text-muted-foreground" data-testid="link-nav-work">Selected work</a>
+          <a href="#social" className="transition-colors hover:text-muted-foreground" data-testid="link-nav-social">Social</a>
           <a href="#contact" className="transition-colors hover:text-muted-foreground" data-testid="link-nav-contact">Contact</a>
         </nav>
         <a href="mailto:alex.morgan.dev@example.com" className="hidden items-center gap-2 rounded-full border border-foreground/25 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] transition-all hover:border-foreground hover:bg-foreground hover:text-primary-foreground md:flex" data-testid="link-header-email">
@@ -54,7 +56,9 @@ function Home() {
       {menuOpen && (
         <nav className="relative z-20 mx-6 -mt-2 mb-3 flex flex-col gap-1 rounded-2xl border border-foreground/15 bg-card p-3 shadow-lg md:hidden" aria-label="Mobile navigation">
           <a href="#about" onClick={closeMenu} className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-muted" data-testid="link-mobile-about">About</a>
+          <a href="#resume" onClick={closeMenu} className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-muted" data-testid="link-mobile-resume">Resume</a>
           <a href="#work" onClick={closeMenu} className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-muted" data-testid="link-mobile-work">Selected work</a>
+          <a href="#social" onClick={closeMenu} className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-muted" data-testid="link-mobile-social">Social</a>
           <a href="#contact" onClick={closeMenu} className="rounded-xl px-4 py-3 text-sm font-semibold hover:bg-muted" data-testid="link-mobile-contact">Contact</a>
         </nav>
       )}
@@ -138,11 +142,70 @@ function Home() {
           </div>
         </section>
 
+        <section id="resume" className="scroll-mt-20 border-t border-foreground/15 bg-card">
+          <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32 lg:px-14">
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-muted-foreground">02 / Resume</p>
+                <h2 className="mt-5 font-display text-4xl font-bold tracking-tight md:text-6xl">A practical<br /><span className="text-muted-foreground">work in progress.</span></h2>
+              </div>
+              <button type="button" onClick={() => window.print()} className="group inline-flex w-fit items-center gap-3 rounded-full border border-foreground/25 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] transition-colors hover:border-foreground hover:bg-foreground hover:text-primary-foreground" data-testid="button-print-resume">
+                Print / save PDF <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </div>
+            <div className="mt-14 grid gap-12 lg:grid-cols-[1.3fr_0.7fr]">
+              <div className="space-y-10">
+                <div className="border-t border-foreground/15 pt-5">
+                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+                    <h3 className="font-display text-2xl font-bold">Product Development Intern</h3>
+                    <span className="font-mono-custom text-[10px] uppercase tracking-[0.16em] text-muted-foreground">2026 — Present</span>
+                  </div>
+                  <p className="mt-1 text-sm font-semibold text-accent-foreground">Northstar Labs · Portland, OR</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">Helped turn customer feedback into accessible interface improvements, documented reusable components, and practiced shipping changes through branches and pull requests.</p>
+                </div>
+                <div className="border-t border-foreground/15 pt-5">
+                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+                    <h3 className="font-display text-2xl font-bold">Freelance Web Developer</h3>
+                    <span className="font-mono-custom text-[10px] uppercase tracking-[0.16em] text-muted-foreground">2025 — 2026</span>
+                  </div>
+                  <p className="mt-1 text-sm font-semibold text-accent-foreground">Independent · Remote</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">Built responsive landing pages for small teams, translating rough ideas into clear content, friendly interactions, and maintainable front-end code.</p>
+                </div>
+                <div className="border-t border-foreground/15 pt-5">
+                  <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+                    <h3 className="font-display text-2xl font-bold">Full-Stack Web Development Certificate</h3>
+                    <span className="font-mono-custom text-[10px] uppercase tracking-[0.16em] text-muted-foreground">2026</span>
+                  </div>
+                  <p className="mt-1 text-sm font-semibold text-accent-foreground">Online coursework · Replit</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">Coursework focused on React, TypeScript, APIs, version control, and building projects that are ready to share.</p>
+                </div>
+              </div>
+              <aside className="rounded-3xl bg-secondary p-7 md:p-9">
+                <p className="font-mono-custom text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Core skills</p>
+                <div className="mt-5 space-y-6">
+                  <div>
+                    <p className="text-sm font-bold">Languages</p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">TypeScript, JavaScript, HTML, CSS</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Tools</p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">React, Node.js, Git, GitHub, REST APIs</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Strengths</p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">Clear communication, thoughtful UI, iterative shipping</p>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
         <section id="work" className="scroll-mt-20 border-t border-foreground/15 bg-secondary/50">
           <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32 lg:px-14">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
-                <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-muted-foreground">02 / Selected work</p>
+                <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-muted-foreground">03 / Selected work</p>
                 <h2 className="mt-5 font-display text-4xl font-bold tracking-tight md:text-6xl">Small projects.<br /><span className="text-muted-foreground">Real lessons.</span></h2>
               </div>
               <p className="max-w-xs text-sm leading-6 text-muted-foreground">A few experiments and builds that show how I think, learn, and ship.</p>
@@ -188,10 +251,48 @@ function Home() {
           </div>
         </section>
 
+        <section id="social" className="scroll-mt-20 border-t border-foreground/15 bg-card">
+          <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32 lg:px-14">
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-muted-foreground">04 / Social links</p>
+                <h2 className="mt-5 font-display text-4xl font-bold tracking-tight md:text-6xl">Keep in<br /><span className="text-muted-foreground">touch.</span></h2>
+              </div>
+              <p className="max-w-sm text-sm leading-6 text-muted-foreground">Follow along, see what I’m learning, or send a note about a project or opportunity.</p>
+            </div>
+            <div className="mt-14 grid gap-4 md:grid-cols-3">
+              <a href="https://github.com/alexmorgan-dev" target="_blank" rel="noreferrer" className="project-card group rounded-3xl border border-foreground/15 bg-secondary p-7" data-testid="card-social-github">
+                <div className="flex items-start justify-between">
+                  <Github size={28} strokeWidth={1.6} />
+                  <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+                <h3 className="mt-14 font-display text-2xl font-bold">GitHub</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Code, experiments, and projects in progress.</p>
+              </a>
+              <a href="https://www.linkedin.com/in/alexmorgan-dev" target="_blank" rel="noreferrer" className="project-card group rounded-3xl border border-foreground/15 bg-primary p-7 text-primary-foreground" data-testid="card-social-linkedin">
+                <div className="flex items-start justify-between">
+                  <Linkedin size={28} strokeWidth={1.6} />
+                  <ArrowUpRight size={20} className="text-accent transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+                <h3 className="mt-14 font-display text-2xl font-bold">LinkedIn</h3>
+                <p className="mt-2 text-sm text-primary-foreground/65">Professional updates and conversations.</p>
+              </a>
+              <a href="mailto:alex.morgan.dev@example.com" className="project-card group rounded-3xl border border-foreground/15 bg-accent p-7" data-testid="card-social-email">
+                <div className="flex items-start justify-between">
+                  <span className="font-mono-custom text-[11px] uppercase tracking-[0.16em]">Email</span>
+                  <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
+                <h3 className="mt-14 font-display text-2xl font-bold">Say hello</h3>
+                <p className="mt-2 text-sm text-accent-foreground/70">alex.morgan.dev@example.com</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section id="contact" className="scroll-mt-20 mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32 lg:px-14">
           <div className="rounded-[2rem] bg-primary px-7 py-12 text-primary-foreground md:px-14 md:py-16 lg:flex lg:items-end lg:justify-between lg:gap-16">
             <div className="max-w-2xl">
-              <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-primary-foreground/55">03 / Contact</p>
+              <p className="font-mono-custom text-[11px] uppercase tracking-[0.2em] text-primary-foreground/55">05 / Contact</p>
               <h2 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">Let’s make<br /><span className="text-accent">something useful.</span></h2>
               <p className="mt-7 max-w-md text-base leading-7 text-primary-foreground/65">Have an opportunity, a project, or a thoughtful hello? My inbox is open.</p>
             </div>
